@@ -1,0 +1,41 @@
+{% extends 'journal/navbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"> {% endcomment %}
+</head>
+<body>
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <p id= "message-timer" class="alert alert-success float-center text-center message-text"><i class="fa fa-check" aria-hidden="true"></i> &nbsp; {{ message }}</p>
+        {% endif %}
+    {% endfor %}
+    <br>
+    {% for thought in AllThoughts %}
+    <br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        
+        <h3>{{ thought.title }}</h3>
+        
+        {{ thought.content }}
+        <br>
+        {{ thought.date_posted }}
+        <br>
+        <hr>
+        By, {{ thought.user }}
+        <br><br><br>
+        <a class="btn btn-outline-primary btn-md w-100 btn-block p-2" href="{% url 'update-thought' thought.id %}"> Update </a>
+        <br><br>
+        <a class="btn btn-outline-danger btn-md w-100 btn-block p-2" href="{% url 'delete-thought' thought.id %}"> Delete </a>
+    </div>
+    {% endfor %}
+    <br>
+</body>
+<script src="{% static 'js/app.js'%}"></script>
+</html>
+{% endblock %}

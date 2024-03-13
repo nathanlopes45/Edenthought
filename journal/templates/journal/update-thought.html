@@ -1,0 +1,35 @@
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"> {% endcomment %}
+</head>
+<body>
+    &nbsp;
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h1>Update a thought</h1>
+        <p> You may modify the datails of your chosen thought below </p>
+
+        <br>
+
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{ UpdateThought|crispy }}
+
+            <br>
+
+            <button class="btn btn-outline-primary btn-md w-100 btn-block p-3" type="submit"> Update thought </button>
+        </form>
+        <br>
+        <a href="{% url 'my-thoughts' %}"> Return to thoughts </a>
+
+    </div>
+    <br>
+</body>
+</html>
+{% endblock %}
