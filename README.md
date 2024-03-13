@@ -1,0 +1,2 @@
+# Edenthought
+Django Thought project
