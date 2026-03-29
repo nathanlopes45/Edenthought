@@ -192,7 +192,6 @@ MIT License
 ## 👤 Author
 Nathan Lopes
 
----
 
 
 
