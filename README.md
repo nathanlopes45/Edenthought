@@ -3,6 +3,8 @@
 Edenthought is a Django-based web application for personal journaling. Users can register, log in, create and manage journal entries (thoughts), and maintain a profile with a profile picture. The project emphasizes user authentication, clean UI with Bootstrap 5, and email notifications for new users.
 
 ---
+## Hosted on https://edenthought-31k3.onrender.com/
+---
 
 ## 🚀 Features
 
